@@ -178,7 +178,8 @@ git push "$GIT_CMD_REPOSITORY" --set-upstream "$TARGET_BRANCH"
 # Tag commit and push if it is set
 if [ ! -z "$COMMIT_TAG" ]
 then
-	echo "[+] git tag"
+	echo "[+] Adding git tag"
 	git tag $COMMIT_TAG
-	git push "https://$USER_NAME:$API_TOKEN_GITHUB@$GITHUB_SERVER/$DESTINATION_REPOSITORY_USERNAME/$DESTINATION_REPOSITORY_NAME.git" --tags
+	echo "[+] Pushing git tag"
+	git push "$GIT_CMD_REPOSITORY" --tags
 fi
